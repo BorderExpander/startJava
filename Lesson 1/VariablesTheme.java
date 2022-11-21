@@ -1,32 +1,37 @@
 public class VariablesTheme {
 	public static void main(String[] args) {
 
-	System.out.println("1. Создание переменных и вывод их значений на консоль");
-	boolean webCam = true;
-	byte cpuFrequency = 2.80;
-	short ramMemoryGB = 8;
-	int systemType = 64;
-	long productId = 00252;
-	float wieghtComputer= 1.4f;
-	double screenDisplay= 13.4d;
-	System.out.println("\tналичие веб камеры " + webCam);
-	System.out.println("\tчастота процессора " + processor);
-	System.out.println("\tоперативная память " + ramMemory +"GB");
-	System.out.println("\tРазрядность системы " + systemType);
-	System.out.println("\tКакое-то число F " + someFloat);
-	System.out.println("\tКакое-то число D " + someDouble);
+        System.out.println("1. Создание переменных и вывод их значений на консоль");
+        boolean webCam = true;
+        byte cpuFrequency = 2.80;
+        short ramMemoryGB = 8;
+        int systemType = 64;
+        long productId = 00252;
+        float wieghtComputer= 1.4f;
+        double screenDisplay= 13.4d;
+        System.out.println("\tналичие веб камеры " + webCam);
+        System.out.println("\tчастота процессора " + cpuFrequency +"GHz");
+        System.out.println("\tоперативная память " + ramMemoryGB +"GB");
+        System.out.println("\tКод продукта " + productId);
+        System.out.println("\tРазрядность системы " + systemType);
+        System.out.println("\tВес компьютера " + wieghtComputer +"кг");
+        System.out.println("\tДиагональ экрана" + screenDisplay +"дюймов");
 
-	System.out.println("\n2. Расчет стоимости товара со скидкой");
-	double summaSkidki = (100 + 200) * 0.11;
-	System.out.println("Сумма скидки составляет: " + summaSkidki);
-	double discountSum = (100 + 200) - (int) summaSkidki;
-	System.out.println("Сумма со скидкой: " + resultSum);
+        System.out.println("\n 2. Расчет стоимости товара со скидкой");
+        double priceCopybook = 100.0;
+        double priceBook = 200.0;
+        short discountPersent = 11;
+        double totalCost = priceBook + priceCopybook;
+        double discountPrice = totalCost * discountPersent / 100.0;
+        double totalCostWithdiscount = totalCost - discountPrice;
+        System.out.println("\tСумма скидки: " + discountPrice + "\n\t" +
+                "Всего цена со скидкой: " + totalCostWithdiscount);
 
-	System.out.println("\n3. Вывод на консоль слова JAVA");
-	System.out.println("   J    a  v     v  a   ");
-	System.out.println("   J   a a  v   v  a a  ");
-	System.out.println("J  J  aaaaa  V V  aaaaa ");
-	System.out.println(" JJ  a     a  V  a     a");
+        System.out.println("\n3. Вывод на консоль слова JAVA");
+        System.out.println("   J    a  v     v  a   ");
+        System.out.println("   J   a a  v   v  a a  ");
+        System.out.println("J  J  aaaaa  V V  aaaaa ");
+        System.out.println(" JJ  a     a  V  a     a");
 
         System.out.println("\n 4. Отображение min и max значений числовых типов данных");
         byte byteMax = 127;
@@ -56,19 +61,22 @@ public class VariablesTheme {
         int number3 = number1;
         number1 = number2;
         number2 = number3;
-        System.out.println("\t\t перестановка с помощью третьей переменной: var1 = " + number1 + " var2 = " + number2);
+        System.out.println("\t\t перестановка с помощью третьей переменной: var1 = " + number1 
+        + " var2 = " + number2);
         System.out.println("\tИсходное значение: var1 = " + number1 + " var2 = " + number2);
         number1 += number2;
         number2 = number1 - number2;
         number1 -= number2;
-        System.out.println("\t\t с помощью арифметических операций: var1 = " + number1 + " var2 = " + number2);
+        System.out.println("\t\t с помощью арифметических операций: var1 = " + number1 + 
+        " var2 = " + number2);
         System.out.println("\tИсходное значение: var1 = " + number1 + " var2 = " + number2);
         number1 ^= number2;
         number2 ^= number1;
         number1 ^= number2;
-        System.out.println("\t\t с помощью побитовой операции: var1 = " + number1 + " var2= " + number2);
+        System.out.println("\t\t с помощью побитовой операции: var1 = " + number1 + " var2= " 
+        + number2);
 
-        System.out.println("6. Вывод символов и их кодов");
+        System.out.println("\n6. Вывод символов и их кодов");
         char codeOfSymbol35 = 35;
         char codeOfSymbol38 = 38;
         char codeOfSymbol64 = 64;
@@ -79,6 +87,7 @@ public class VariablesTheme {
         System.out.println("\t Код " + (byte) codeOfSymbol64 + " символ " + codeOfSymbol64);
         System.out.println("\t Код " + (byte) codeOfSymbol94 + " символ " + codeOfSymbol94);
         System.out.println("\t Код " + (byte) codeOfSymbol95 + " символ " + codeOfSymbol95);
+
         System.out.println("\n7.Отображение количества сотен, десятков и единиц числа");
         int num = 123;
         System.out.println("\tКоличество сотен в числе " + num / 100);
