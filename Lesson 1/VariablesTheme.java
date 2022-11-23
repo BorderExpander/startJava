@@ -3,7 +3,7 @@ public class VariablesTheme {
 
         System.out.println("1. Создание переменных и вывод их значений на консоль");
         boolean webCam = true;
-        byte cpuFrequency = 2.80;
+        byte cpuFrequency = 2;
         short ramMemoryGB = 8;
         int systemType = 64;
         long productId = 00252;
