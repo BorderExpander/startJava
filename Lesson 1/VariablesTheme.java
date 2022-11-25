@@ -1,6 +1,6 @@
 public class VariablesTheme {
-	public static void main(String[] args) {
 
+    public static void main(String[] args) {
         System.out.println("1. Создание переменных и вывод их значений на консоль");
         boolean webCam = true;
         byte cpuFrequency = 2;
@@ -18,14 +18,14 @@ public class VariablesTheme {
         System.out.println("\tДиагональ экрана" + screenDisplay +"дюймов");
 
         System.out.println("\n 2. Расчет стоимости товара со скидкой");
-        double priceCopybook = 100.0;
+        double pricePen = 100.0;
         double priceBook = 200.0;
         short discountPersent = 11;
-        double totalCost = priceBook + priceCopybook;
-        double discountPrice = totalCost * discountPersent / 100.0;
-        double totalCostWithdiscount = totalCost - discountPrice;
-        System.out.println("\tСумма скидки: " + discountPrice + "\n\t" +
-                "Всего цена со скидкой: " + totalCostWithdiscount);
+        double goodsPrice = priceBook + pricePen;
+        double discountSum = goodsPrice * discountPersent / 100.0;
+        double discountPrice = goodsPrice - discountSum;
+        System.out.println("\tСумма скидки: " + discountSum + "\n\t Всего цена со скидкой: " 
+                + discountPrice);
 
         System.out.println("\n3. Вывод на консоль слова JAVA");
         System.out.println("   J    a  v     v  a   ");
@@ -62,31 +62,31 @@ public class VariablesTheme {
         number1 = number2;
         number2 = number3;
         System.out.println("\t\t перестановка с помощью третьей переменной: var1 = " + number1 
-        + " var2 = " + number2);
+                + " var2 = " + number2);
         System.out.println("\tИсходное значение: var1 = " + number1 + " var2 = " + number2);
         number1 += number2;
         number2 = number1 - number2;
         number1 -= number2;
         System.out.println("\t\t с помощью арифметических операций: var1 = " + number1 + 
-        " var2 = " + number2);
+                " var2 = " + number2);
         System.out.println("\tИсходное значение: var1 = " + number1 + " var2 = " + number2);
         number1 ^= number2;
         number2 ^= number1;
         number1 ^= number2;
         System.out.println("\t\t с помощью побитовой операции: var1 = " + number1 + " var2= " 
-        + number2);
+                + number2);
 
         System.out.println("\n6. Вывод символов и их кодов");
-        char codeOfSymbol35 = 35;
-        char codeOfSymbol38 = 38;
-        char codeOfSymbol64 = 64;
-        char codeOfSymbol94 = 94;
-        char codeOfSymbol95 = 95;
-        System.out.println("\t Код " + (byte) codeOfSymbol35 + " символ " + codeOfSymbol35);
-        System.out.println("\t Код " + (byte) codeOfSymbol38 + " символ " + codeOfSymbol38);
-        System.out.println("\t Код " + (byte) codeOfSymbol64 + " символ " + codeOfSymbol64);
-        System.out.println("\t Код " + (byte) codeOfSymbol94 + " символ " + codeOfSymbol94);
-        System.out.println("\t Код " + (byte) codeOfSymbol95 + " символ " + codeOfSymbol95);
+        char code35 = 35;
+        char code38 = 38;
+        char code64 = 64;
+        char code94 = 94;
+        char code95 = 95;
+        System.out.println("\t Код " + (int) codeOfSymbol35 + " символ " + code35);
+        System.out.println("\t Код " + (int) codeOfSymbol38 + " символ " + code38);
+        System.out.println("\t Код " + (int) codeOfSymbol64 + " символ " + code64);
+        System.out.println("\t Код " + (int) codeOfSymbol94 + " символ " + code94);
+        System.out.println("\t Код " + (int) codeOfSymbol95 + " символ " + code95);
 
         System.out.println("\n7.Отображение количества сотен, десятков и единиц числа");
         int num = 123;
@@ -101,31 +101,29 @@ public class VariablesTheme {
         char underLine = '_';
         char bracket = '(';
         char backBracket = ')';
-        System.out.printf("%s%s%s%s%s%s%s%s%s%s",
-            space, space, space, space, slash, backSlash, space,
-            space, space, space);
-        System.out.printf("\n%s%s%s%s%s%s%s%s%s%s", space, space, space, slash,
-            space, space, backSlash, space, space, space);
-        System.out.printf("\n%s%s%s%s%s%s%s%s%s%s", space, space, slash,
-            underLine, bracket, space, backBracket, backSlash, space, space);
+        System.out.printf("%s%s%s%s%s%s%s%s%s%s", space, space, space, space, slash, backSlash, 
+                space, space, space, space);
+        System.out.printf("\n%s%s%s%s%s%s%s%s%s%s", space, space, space, slash, space, space, 
+                backSlash, space, space, space);
+        System.out.printf("\n%s%s%s%s%s%s%s%s%s%s", space, space, slash, underLine, bracket, space, 
+                backBracket, backSlash, space, space);
         System.out.printf("\n%s%s%s%s%s%s%s%s%s%s", space, slash, space, space,
-            space, space, space, space, backSlash, space);
-        System.out.printf("\n%s%s%s%s%s%s%s%s%s%s", slash, underLine, underLine,
-            underLine, underLine, slash, backSlash, underLine, underLine,
-            backSlash);
+                space, space, space, space, backSlash, space);
+        System.out.printf("\n%s%s%s%s%s%s%s%s%s%s", slash, underLine, underLine, underLine, 
+                underLine, slash, backSlash, underLine, underLine, backSlash);
 
         System.out.println("\n9. Произведение и сумма цифр числа");
         int srcNum = 345;
-        int sumDigits = srcNum / 100 + srcNum % 10 + srcNum % 100 / 10;
-        int prodDigits = srcNum / 100 * (srcNum % 10) * (srcNum % 100 / 10);
+        int sumDigits = srcNum / 100 + srcNum % 10 /10 + srcNum % 10;
+        int prodDigits = (srcNum / 100) * (srcNum / 10 % 10) * (srcNum % 10);
         System.out.printf("\t сумма цифр числа %d = %d ", srcNum, sumDigits);
         System.out.printf("\n\t произведение цифр числа %d = %d ", srcNum, prodDigits);
 
         System.out.println("\n\n10. Преобразование секунд");
-        int numSeconds = 86399;
-        int hh = numSeconds / 3600;
-        int minutes = numSeconds % 3600 / 60;
-        int seconds = numSeconds % 60;
+        int seconds = 86399;
+        int hh = seconds / 3600;
+        int minutes = seconds % 3600 / 60;
+        int seconds = seconds % 60;
         System.out.printf("полученное время %s:%s:%s", hh, minutes, seconds);
     }
 }
