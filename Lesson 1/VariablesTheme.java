@@ -82,11 +82,11 @@ public class VariablesTheme {
         char code64 = 64;
         char code94 = 94;
         char code95 = 95;
-        System.out.println("\t Код " + (int) codeOfSymbol35 + " символ " + code35);
-        System.out.println("\t Код " + (int) codeOfSymbol38 + " символ " + code38);
-        System.out.println("\t Код " + (int) codeOfSymbol64 + " символ " + code64);
-        System.out.println("\t Код " + (int) codeOfSymbol94 + " символ " + code94);
-        System.out.println("\t Код " + (int) codeOfSymbol95 + " символ " + code95);
+        System.out.println("\t Код " + (int) code35 + " символ " + code35);
+        System.out.println("\t Код " + (int) code38 + " символ " + code38);
+        System.out.println("\t Код " + (int) code64 + " символ " + code64);
+        System.out.println("\t Код " + (int) code94 + " символ " + code94);
+        System.out.println("\t Код " + (int) code95 + " символ " + code95);
 
         System.out.println("\n7.Отображение количества сотен, десятков и единиц числа");
         int num = 123;
@@ -120,10 +120,10 @@ public class VariablesTheme {
         System.out.printf("\n\t произведение цифр числа %d = %d ", srcNum, prodDigits);
 
         System.out.println("\n\n10. Преобразование секунд");
-        int seconds = 86399;
-        int hh = seconds / 3600;
-        int minutes = seconds % 3600 / 60;
-        int seconds = seconds % 60;
-        System.out.printf("полученное время %s:%s:%s", hh, minutes, seconds);
+        int secs = 86399;
+        int hh = secs / 3600;
+        int mins = secs % 3600 / 60;
+        secs = secs % 60;
+        System.out.printf("полученное время %s:%s:%s", hh, mins, secs);
     }
 }
