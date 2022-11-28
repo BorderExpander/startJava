@@ -150,18 +150,20 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n9.Подсчет количества банкнот");
-        int takePrice = 567;
-        int numOfHundreds1 = takePrice / 100;
-        int numOfTens1 = takePrice / 10 % 10;
-        int numOfOne1 = takePrice % 10;
-        if (numOfTens1 > 5) {
-            numOfOne1 += (numOfTens1 - 5) * 10;
-            numOfTens1 = 5;
+        int sumTotal = 567;
+        int numOf100 = sumTotal / 100;
+        int numOf10 = (sumTotal - numOf100 * 100) / 10;
+        int numOf1 = sumTotal % 10;
+        int limitOf10 = 5;
+        System.out.println("Для суммы " + sumTotal + " необходимо:" + numOf100 + " купюр по 100, "
+                + numOf10 + " купюр по 10, " + numOf1 + " купюр по 1");
+        if (numOf10 > limitOf10) {
+            numOf1 += (numOf10 - limitOf10) * 10;
+            numOf10 = limitOf10;
         }
-        int sum = numOfHundreds1 * 100 + numOfTens1 * 10 + numOfOne1;
-        System.out.println("Номинал: 100, " + "количество: " + numOfHundreds1);
-        System.out.println("Номинал: 10, " + "количество: " + numOfTens1);
-        System.out.println("Номинал: 1, " + "количество: " + numOfOne1);
-        System.out.println("Исходная сумма: " + sum);
+        System.out.println("Для суммы " + sumTotal + " выбрано:" + "\t" + numOf100 + 
+            " купюр по 100," + numOf10 + " купюр по 10, " + numOf1 + " купюр по 1");
+        sumTotal = numOf100 * 100 + numOf10 * 10 + numOf1;
+        System.out.println("Проверка суммы: " + sumTotal);
     }
 }
