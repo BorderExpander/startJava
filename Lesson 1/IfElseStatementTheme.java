@@ -150,8 +150,7 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n9.Подсчет количества банкнот");
-        //int sumTotal = 567;
-        int sumTotal = 1500;
+        int sumTotal = 567;
         int numOf100 = sumTotal / 100;
         int numOf10 = (sumTotal - numOf100 * 100) / 10;
         int numOf1 = sumTotal % 10;
