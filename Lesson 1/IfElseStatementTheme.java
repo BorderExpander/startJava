@@ -150,20 +150,31 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n9.Подсчет количества банкнот");
-        int sumTotal = 567;
+        //int sumTotal = 567;
+        int sumTotal = 1500;
         int numOf100 = sumTotal / 100;
         int numOf10 = (sumTotal - numOf100 * 100) / 10;
         int numOf1 = sumTotal % 10;
+        int limitOf100 = 10;
         int limitOf10 = 5;
+        int limitOf1 = 50;
         System.out.println("Для суммы " + sumTotal + " необходимо:" + numOf100 + " купюр по 100, "
                 + numOf10 + " купюр по 10, " + numOf1 + " купюр по 1");
+        if (numOf100 > limitOf100) {
+            numOf10 += (numOf100 - limitOf100) * 100;
+            numOf100 = limitOf100;
+        }
         if (numOf10 > limitOf10) {
             numOf1 += (numOf10 - limitOf10) * 10;
             numOf10 = limitOf10;
         }
+        if (numOf1 > limitOf1) {
+            System.out.println("Недостаточно купюр для выдачи");
+        } else {
         System.out.println("Для суммы " + sumTotal + " выбрано:" + "\t" + numOf100 + 
             " купюр по 100," + numOf10 + " купюр по 10, " + numOf1 + " купюр по 1");
         sumTotal = numOf100 * 100 + numOf10 * 10 + numOf1;
         System.out.println("Проверка суммы: " + sumTotal);
+        }
     }
 }
