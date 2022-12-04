@@ -1,4 +1,4 @@
-public class CyclesTheme{
+public class CyclesTheme {
 
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
@@ -16,7 +16,7 @@ public class CyclesTheme{
             currNum++;
         } while (currNum <= endRange);
         System.out.println("\tВ промежутке [" + startRange + "," + endRange +"] Сумма чётных чисел "
-            + " = " + sumEven +" Сумма нечётных чисел = " + sumOdd);
+                + " = " + sumEven +" Сумма нечётных чисел = " + sumOdd);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания");
         int num1 = 10;
@@ -65,9 +65,9 @@ public class CyclesTheme{
         }
 
         System.out.println("\n\n5. Проверка количества двоек на четность");
-        int num = 3242592;
+        srcNumber = 3242592;
         int numDeuces = 0;
-        int numTmp = num;
+        int numTmp = srcNumber;
         while (numTmp != 0) {
             int digit = numTmp % 10;
             numTmp /= 10;
@@ -76,9 +76,9 @@ public class CyclesTheme{
             }
         }
         if (numDeuces % 2 == 0) {
-            System.out.println("Число " + num + " содержит четное количество единиц");
+            System.out.println("Число " + srcNumber + " содержит четное количество единиц");
         } else {
-            System.out.println("Число " + num + " содержит нечетное количество единиц");
+            System.out.println("Число " + srcNumber + " содержит нечетное количество единиц");
         }
 
         System.out.println("\n\n6.Отображение фигур в консоли");
@@ -104,8 +104,8 @@ public class CyclesTheme{
         }
 
         System.out.println();
-        boolean midle = false;
-        int midleRow = 3;
+        boolean middle = false;
+        int middleRow = 3;
         int curIndex;
         countLines = 1;
         do {
@@ -115,10 +115,10 @@ public class CyclesTheme{
                 curIndex--;
             } while (curIndex != 0);
             System.out.println();
-            if (countLines == midleRow) {
-                midle = true;
+            if (countLines == middleRow) {
+                middle = true;
             }
-            if (!midle) {
+            if (!middle) {
                 countLines++;
             } else {
                 countLines--;
@@ -129,12 +129,12 @@ public class CyclesTheme{
         System.out.printf(" %4s %4s \n ", "DEC", "CHAR");
         for (int i = 1; i <= 47; i++) {
             if (i % 2 != 0) {
-                System.out.printf(" %3d %4s \n ", i, (char) i);
+                System.out.printf(" %3d %4c \n ", i, i);
             }
         }
         for (int i = 97; i <= 122; i++) {
             if (i % 2 == 0) {
-                System.out.printf(" %3d %4s \n ", i, (char) i);
+                System.out.printf(" %3d %4c \n ", i, i);
             }
         }
 
@@ -142,13 +142,11 @@ public class CyclesTheme{
         srcNumber = 1234321;
         int copySrcNumber = srcNumber;
         int reversedNumber = 0;
-        do {
-            reversedNumber += copySrcNumber % 10;
+        while (copySrcNumber != 0) {
+            int digit = copySrcNumber % 10;
+            reversedNumber = reversedNumber * 10 + digit;
             copySrcNumber /= 10;
-            if (copySrcNumber > 0) {
-               reversedNumber *= 10;
-            }
-        } while (copySrcNumber > 0);
+        }
         if (reversedNumber == srcNumber) {
             System.out.printf("число %d палиндром", reversedNumber);
         } else {
@@ -161,7 +159,7 @@ public class CyclesTheme{
         int countDigits = 0;
         int sumHalfPartNumber = 0;
         int sumMinorPartNumber = 0;
-        int midle10 = 1;
+        int middle10 = 1;
         while (copyLuckyNumber > 0) {
             copyLuckyNumber /= 10;
             countDigits++;
@@ -172,13 +170,13 @@ public class CyclesTheme{
             copyLuckyNumber /= 10;
             if (i <= countDigits / 2) {
                 sumMinorPartNumber += digit;
-                midle10 *= 10;
+                middle10 *= 10;
             } else {
                 sumHalfPartNumber += digit;
             }
         }
-        int luckyPart1 = luckyNumber / midle10;
-        int luckyPart2 = luckyNumber % midle10;
+        int luckyPart1 = luckyNumber / middle10;
+        int luckyPart2 = luckyNumber % middle10;
         System.out.printf("\tСумма цифр %d = %d", luckyPart1, sumHalfPartNumber);
         System.out.printf("\n\tСумма цифр %d = %d", luckyPart2, sumMinorPartNumber);
         if (sumMinorPartNumber == sumHalfPartNumber) {
@@ -197,7 +195,7 @@ public class CyclesTheme{
         }
         System.out.println();
         for (int i = 1; i < 10; i++) {
-                  System.out.printf("%s", "---");
+            System.out.printf("%s", "---");
         }
         for (int i = 2; i < 10; i++) {
             System.out.println();
