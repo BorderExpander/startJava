@@ -5,7 +5,7 @@ public class Calculator {
         int b = 5;
         int result = 0;
         char sign = '*';
-        boolean mistake = false;
+        boolean wrong = false;
 
         if (sign == '+') {
             result = a + b;
@@ -15,7 +15,7 @@ public class Calculator {
             result = a * b;
         } else if (sign == '/') {
             if (b == 0) {
-                mistake = true;
+                wrong = true;
             } else {
                 result = a / b;
             }
@@ -26,12 +26,12 @@ public class Calculator {
             }
         } else if (sign == '%') {
             if (b == 0) {
-                mistake = true;
+                wrong = true;
             } else {
                 result = a % b;
             }
         }
-        if (mistake == true) {
+        if (wrong) {
             System.out.println("Ошибка");
         } else {
             System.out.println(a + " " + sign + " " + b + " = " + result);
