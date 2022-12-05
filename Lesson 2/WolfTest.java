@@ -1,12 +1,5 @@
 public class WolfTest {
 
-    //String sex = "Мужской";
-    //String name = "Вульф";
-    //int weight = 50;
-    //int age = 4;
-    //String color = "Черный";
-
-
     public static void main(String[] args) {
         Wolf wolf = new Wolf();
         wolf.sex = "Мужской";
