@@ -13,7 +13,7 @@ public class GuessNumber {
     }
 
     public void play() {
-        guessNum = (int) (Math.random() * 100);
+        guessNum = (int) Math.floor(Math.random() * 100);
         while ((player1.getNumber() != guessNum) && (player2.getNumber() != guessNum)) {
             tryToGuess(player1);
             if (player1.getNumber() != guessNum) {

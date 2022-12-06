@@ -1,15 +1,17 @@
 public class Calculator {
 
-    private static int firstNumber;
-    private static int secondNumber;
+    private static int num1;
+    private static int num2;
     private static char sign;
 
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
+    public void setnum1(int num1) {
+        this.num1 = num1;
     }
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
+    
+    public void setnum2(int num2) {
+        this.num2 = num2;
     }
+
     public void setSign(char sign) {
         this.sign = sign;
     }
@@ -19,39 +21,39 @@ public class Calculator {
         int result = 0;
         switch(sign) {
             case '+':
-                result = firstNumber + secondNumber;
+                result = num1 + num2;
                 break;
             case '-':
-                result = firstNumber - secondNumber;
+                result = num1 - num2;
                 break;
             case '*':
-                result = firstNumber * secondNumber;
+                result = num1 * num2;
                 break;
             case '/':
-                if (secondNumber == 0) {
+                if (num2 == 0) {
                     wrong = true;
                 } else {
-                    result =  firstNumber / secondNumber;
+                    result =  num1 / num2;
                 }
                 break;
             case '^':
                 result = 1;
-                for (int i = secondNumber; i != 0; i--) {
-                    result *= firstNumber;
+                for (int i = num2; i != 0; i--) {
+                    result *= num1;
                 }
                 break;
             case '%':
-                if (secondNumber == 0) {
+                if (num2 == 0) {
                     wrong = true;
                 } else {
-                    result = firstNumber % secondNumber;
+                    result = num1 % num2;
                 }
                 break;
         }
         if (wrong) {
             System.out.println("Ошибка");
         } else {
-            System.out.println(firstNumber + " " + sign + " " + secondNumber + " = " + result);
+            System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
         }
     }
 }

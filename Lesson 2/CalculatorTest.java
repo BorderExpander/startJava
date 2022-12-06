@@ -9,12 +9,12 @@ public class CalculatorTest {
 
         do {
             System.out.println("Введите первое число:");
-            calculator.setFirstNumber(scan.nextInt());
+            calculator.setnum1(scan.nextInt());
             System.out.println("Введите знак математической операции:");
             scan.nextLine();
             calculator.setSign(scan.nextLine().charAt(0));
             System.out.println("Введите второе число: ");
-            calculator.setSecondNumber(scan.nextInt());
+            calculator.setnum2(scan.nextInt());
             calculator.calculate();
             scan.nextLine();
             do {

@@ -10,31 +10,6 @@ public class Jaeger {
     public Jaeger() {
     }
 
-    public Jaeger(String modelName, String type, float height, float weight, int speed, int armor) {
-        this.modelName = modelName;
-        this.height = height;
-        this.weight = weight;
-        this.speed = speed;
-        this.armor = armor;
-        this.type = type;
-    }
-
-    public void walk() {
-        System.out.println("Идет");
-    }
-
-    public void sit() {
-        System.out.println("Сидит");
-    }
-
-    public void hit() {
-        System.out.println("Бьет");
-    }
-
-    public void run() {
-        System.out.println("Бежит");
-    }
-
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
@@ -81,5 +56,30 @@ public class Jaeger {
 
     public int getArmor() {
         return armor;
+    }
+
+    public Jaeger(String modelName, String type, float height, float weight, int speed, int armor) {
+        this.modelName = modelName;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.armor = armor;
+        this.type = type;
+    }
+
+    public void walk() {
+        System.out.println("Идет");
+    }
+
+    public void sit() {
+        System.out.println("Сидит");
+    }
+
+    public void hit() {
+        System.out.println("Бьет");
+    }
+
+    public void run() {
+        System.out.println("Бежит");
     }
 }
