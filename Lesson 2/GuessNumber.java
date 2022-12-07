@@ -15,29 +15,27 @@ public class GuessNumber {
     public void play() {
         guessNum = (int) (1 + (Math.random() * 100));
         while (true) {
-            if (isGuessed(player1)) {
-                break;
-            } if (isGuessed(player2)) {
+            if ( (isGuessed(player1)) || (isGuessed(player2)) ) {
                 break;
             }
         }
     }
 
     private boolean isGuessed(Player player) {
-        guessNum(player);
-        if (player.getNum() == guessNum) {
-            System.out.println("Игрок " + player.getName() + " победил! Загаданное число: " 
-                    + guessNum);
+        inputNum(player);
+        int num = player.getNum();
+        if (num == guessNum) {
+            System.out.println("Игрок " + player.getName() + " победил! Загаданное число: " + guessNum);
             return true;
-        } else if (player.getNum() > guessNum) {
+        } else if (num > guessNum) {
             System.out.println("Число " + player.getNum() + " больше того, что загадал компьютер");
-        } else if (player.getNum() < guessNum) {
+        } else if (num < guessNum) {
             System.out.println("Число " + player.getNum() + " меньше того, что загадал компьютер");
         }
         return false;
     }
 
-    private void guessNum(Player player) {
+    private void inputNum(Player player) {
         System.out.println("Игрок " + player.getName() + " введите число:");
         player.setNum(scan.nextInt());
     }
