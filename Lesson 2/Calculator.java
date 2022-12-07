@@ -1,8 +1,8 @@
 public class Calculator {
 
-    private static int num1;
-    private static int num2;
-    private static char sign;
+    private int num1;
+    private int num2;
+    private char sign;
 
     public void setnum1(int num1) {
         this.num1 = num1;
@@ -16,7 +16,7 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public static void calculate() {
+    public void calculate() {
         boolean wrong = false;
         int result = 0;
         switch(sign) {
