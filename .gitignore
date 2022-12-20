@@ -1,0 +1,6 @@
+/out
+*.class
+sources.txt
+/src/com/startjava/lesson_1/finaltask/options
+/src/com/startjava/lesson_1/finaltask/optionsj
+/.idea

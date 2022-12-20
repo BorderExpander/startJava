@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.animal
+package com.startjava.lesson_2_3_4.animal;
 
 public class WolfTest {
 
@@ -10,8 +10,8 @@ public class WolfTest {
         wolf.setAge(4);
         wolf.setColor("Черный");
 
-        System.out.println("Мы создали волка по имени " + wolf.name + ", пол " + wolf.sex 
-                + " ,весом в " + wolf.weight + ", в возрасте 4" + ", окрас " + wolf.color);
+        System.out.println("Мы создали волка по имени " + wolf.getName() + ", пол " + wolf.getSex()
+                + " ,весом в " + wolf.getWeight() + ", в возрасте 4" + ", окрас " + wolf.getColor());
 
         wolf.walk();
         wolf.sit();
