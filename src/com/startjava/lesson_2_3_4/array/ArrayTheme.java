@@ -21,10 +21,10 @@ public class ArrayTheme {
         for (int i = 0; i < len; i++) {
             intArr[i] = i;
         }
-        int mDigits = 1;
+        int prodDigits = 1;
         for (int i = 1; i < len - 1; i++) {
-            mDigits *= intArr[i];
-            System.out.print(intArr[i] + (i != len - 2 ? " * " : " = " + mDigits));
+            prodDigits *= intArr[i];
+            System.out.print(intArr[i] + (i != len - 2 ? " * " : " = " + prodDigits));
         }
         System.out.println("\n" + intArr[0] + " " + intArr[9]);
 
@@ -51,10 +51,8 @@ public class ArrayTheme {
         System.out.print("\n4. Вывод элементов массива лесенкой в обратном порядке");
         char[] alphabet = new char[26];
         len = alphabet.length;
-        char symbol = 'A';
         for (int i = 0; i < len; i++) {
-            alphabet[i] = symbol;
-            symbol++;
+            alphabet[i] = (char) ('A' + i);
         }
         for (int i = len; i >= 0; i--) {
             for (int j = len - 1; j >= i; j--) {
@@ -64,21 +62,21 @@ public class ArrayTheme {
         }
 
         System.out.print("\n5. Генерация уникальных чисел");
-        intArr = new int[30];
-        len = intArr.length;
+        int[] uniqueArr = new int[30];
+        len = uniqueArr.length;
         for (int i = 0; i < len; i++) {
             int randomNum;
             do {
                 randomNum = generateRandomNum(60, 100);
-            } while (!isUnique(intArr, randomNum));
-            intArr[i] = randomNum;
+            } while (!isUnique(uniqueArr, randomNum));
+            uniqueArr[i] = randomNum;
         }
-        Arrays.sort(intArr);
+        Arrays.sort(uniqueArr);
         for (int i = 0; i < len; i++) {
             if (i % 10 == 0) {
                 System.out.println();
             }
-            System.out.printf("%3d", intArr[i]);
+            System.out.printf("%3d", uniqueArr[i]);
         }
 
         System.out.print("\n\n6. Сдвиг элементов массива\n");
@@ -91,18 +89,26 @@ public class ArrayTheme {
         }
         String[] destArray = new String[countNotBlank];
         int srcPos = 0;
-        int outPos = 0;
+        int destPos = 0;
         len = 0;
+
         for (int i = 0; i < srcArray.length; i++) {
-            if (srcArray[i].isBlank()) {
-                System.arraycopy(srcArray, srcPos, destArray, outPos, len);
-                srcPos = i + 1;
-                outPos += len;
+            if (!srcArray[i].trim().equals("") && (len < i || srcPos == 0)) {
+                srcPos = i;
                 len = 0;
-            } else {
-                len++;
+                for (int j = i; j < srcArray.length; j++) {
+                    if (srcArray[j].trim().equals("")) {
+                        System.arraycopy(srcArray, srcPos, destArray, destPos, len);
+                        destPos += len;
+                        len = j - 1;
+                        break;
+                    }
+                    len++;
+                }
             }
         }
+
+
         System.out.println("Исходный массив:");
         printStringArray(srcArray);
         System.out.println("\nНовый массив:");
