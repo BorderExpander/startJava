@@ -93,11 +93,11 @@ public class ArrayTheme {
         len = 0;
 
         for (int i = 0; i < srcArray.length; i++) {
-            if (!srcArray[i].trim().equals("") && (len < i || srcPos == 0)) {
+            if (!srcArray[i].isBlank() && (len < i || srcPos == 0)) {
                 srcPos = i;
                 len = 0;
                 for (int j = i; j < srcArray.length; j++) {
-                    if (srcArray[j].trim().equals("")) {
+                    if (srcArray[j].isBlank()) {
                         System.arraycopy(srcArray, srcPos, destArray, destPos, len);
                         destPos += len;
                         len = j - 1;
@@ -107,7 +107,6 @@ public class ArrayTheme {
                 }
             }
         }
-
 
         System.out.println("Исходный массив:");
         printStringArray(srcArray);
