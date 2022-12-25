@@ -2,15 +2,11 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Scanner;
 
 public class GuessNumberTest {
+    public static final int NUM_PLAYERS = 3;
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите имя первого игрока:");
-        Player player1 = new Player(scan.nextLine());
-        System.out.println("Введите имя второго игрока:");
-        Player player2 = new Player(scan.nextLine());
-
-        GuessNumber game = new GuessNumber(player1, player2);
+        GuessNumber game = new GuessNumber(createPlayers());
         String answer = "";
         do {
             game.play();
@@ -19,5 +15,15 @@ public class GuessNumberTest {
                 answer = scan.nextLine();
             } while (!answer.equals("yes") && !answer.equals("no"));
         } while(answer.equals("yes"));
+    }
+
+    private static Player[] createPlayers() {
+        Player[] players = new Player[3];
+        Scanner scan = new Scanner(System.in);
+        for (int i = 0; i < NUM_PLAYERS; i++) {
+            System.out.printf("Игрок %S, введите имя: ", i + 1);
+            players[i] = new Player(scan.nextLine());
+        }
+        return players;
     }
 }

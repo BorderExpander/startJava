@@ -107,7 +107,6 @@ public class ArrayTheme {
                 }
             }
         }
-
         System.out.println("Исходный массив:");
         printStringArray(srcArray);
         System.out.println("\nНовый массив:");
